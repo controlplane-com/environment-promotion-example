@@ -85,6 +85,12 @@ After the GitHub Action has successfully deployed the application, it can be tes
 
 - The GVC definition must exists in its own YAML file. The `cpln apply` command executing the file that contains the GVC definition must be executed before any child definition YAML files (workloads, identities, etc.) are executed.
 
+## Permissions
+
+To control which users have the ability to perform sensitive actions, such as merging a pull request, you can utilize the built-in capabilities of GitHub by creating a custom repository role.
+
+Review these <a href="https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization" target="_blank">instructions</a> on how to create a role.
+
 ## Helper Links
 
 GitHub
