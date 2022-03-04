@@ -42,7 +42,7 @@ Since actions will be performed against multiple Orgs, a `Service Account` is re
 
 **Perform the following steps to set up the example:**
 
-1. Fork the example into your own workspace.
+1. Fork the example into your own workspace. 
 
 2. The following variables are required and must be added as GitHub repository secrets.
 
@@ -66,6 +66,8 @@ Add the following variables:
    - The `cpln-gvc.yaml` file defines the GVC to be created/updated for the `dev` Org.
    - The `cpln-gvc-prod.yaml` file defines the Pull Secret and GVC to be created/updated for the `prod` Org.
    - The `cpln-workload.yaml` file defines the Workload to be created/updated corresponding to the dev/staging/prod Workloads.
+
+5. In order for the GitHub Actions to execute, they need to be enabled. Click the `Actions` tab and click the `I understand my workflows, go ahead and enable them` button. Once enabled, any action that will trigger the Action will now execute.
 
 ## Running the App
 
