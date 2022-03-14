@@ -1,6 +1,6 @@
 # Control Plane - Environment Promotion Example
 
-This example demonstrates the promotion of an application to upstream environments (development -> production) using
+This example demonstrates the promotion of an application to downstream environments (development -> production) using
 Control Plane and GitHub Actions. As part of the promotion process, a `Staging Workload` is deployed to test
 updates before promoting to production.
 
@@ -42,7 +42,7 @@ Since actions will be performed against multiple Orgs, a `Service Account` is re
 
 **Perform the following steps to set up the example:**
 
-1. Fork the example into your own workspace.
+1. Fork the example into your own workspace. 
 
 2. The following variables are required and must be added as GitHub repository secrets.
 
@@ -67,6 +67,8 @@ Add the following variables:
    - The `cpln-gvc-prod.yaml` file defines the Pull Secret and GVC to be created/updated for the `prod` Org.
    - The `cpln-workload.yaml` file defines the Workload to be created/updated corresponding to the dev/staging/prod Workloads.
 
+5. In order for the GitHub Actions to execute, they need to be enabled. Click the `Actions` tab and click the `I understand my workflows, go ahead and enable them` button. Once enabled, any action that will trigger the Action will now execute.
+
 ## Running the App
 
 After the GitHub Action has successfully deployed the application, it can be tested by following these steps:
@@ -84,6 +86,12 @@ After the GitHub Action has successfully deployed the application, it can be tes
 - The Control Plane CLI commands use the `CPLN_ORG` and `CPLN_TOKEN` environment variables when needed. There is no need to add the --org or --token flags when executing CLI commands.
 
 - The GVC definition must exists in its own YAML file. The `cpln apply` command executing the file that contains the GVC definition must be executed before any child definition YAML files (workloads, identities, etc.) are executed.
+
+## Permissions
+
+To control which users have the ability to perform sensitive actions, such as merging a pull request, you can utilize the built-in capabilities of GitHub by creating a custom repository role.
+
+Review these <a href="https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization" target="_blank">instructions</a> on how to create a role.
 
 ## Helper Links
 
